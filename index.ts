@@ -1,3 +1,4 @@
+#! usr/bin/env node
 import { Command } from 'commander';
 import ChildProcess from 'child_process';
 import readGitFile from './read-head';
@@ -33,3 +34,5 @@ if (options.latest) {
     }
   }
 }
+
+export default program;

@@ -1,8 +1,9 @@
 import fs from 'fs';
+import path from 'path';
 
 const readGitFile = () =>
   fs
-    .readFileSync('.git/logs/HEAD', 'utf-8')
+    .readFileSync(path.join(process.cwd(), '.git/logs/HEAD'), 'utf-8')
     .split('\n')
     .map(commit => commit.replace(/^([\w\-]+)/, '').trim())
     .filter(Boolean)

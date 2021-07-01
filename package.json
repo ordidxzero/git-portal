@@ -2,12 +2,19 @@
   "name": "git-portal",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "bin": {
+    "git-portal": "dist/index.js"
+  },
+  "preferGlobal": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx tsc && node dist/index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "cli",
+    "git"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
