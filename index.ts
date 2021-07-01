@@ -26,7 +26,9 @@ if (options.latest) {
       if (order > logs.length - 1 || order < 0) {
         console.log('This index is not valid');
       } else {
-        console.log(logs[order]);
+        ChildProcess.exec(`git checkout ${logs[order].id}`, function (error, stdout, stderr) {
+          console.dir(stdout);
+        });
       }
     }
   } else {
