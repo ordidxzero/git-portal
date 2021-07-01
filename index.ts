@@ -1,11 +1,12 @@
-#! usr/bin/env node
 import { Command } from 'commander';
+import appRoot from 'app-root-path';
 import ChildProcess from 'child_process';
 import readGitFile from './read-head';
 
 const program = new Command('git-portal');
 
 program
+  .option('-h, --health', "Check Git object's path")
   .option('-o, --order <number>', 'Type order of commit. first = 0')
   .option('-lc, --last', 'order of last commit. If you use the o option, this option is ignored.')
   .option('-la , --latest', 'Back to the latest commit.');
@@ -14,6 +15,9 @@ program.parse(process.argv);
 
 const options = program.opts();
 const logs = readGitFile();
+if (options.health) {
+  console.log(appRoot.resolve('.git'));
+}
 if (options.latest) {
   ChildProcess.exec('git checkout -');
 } else {
