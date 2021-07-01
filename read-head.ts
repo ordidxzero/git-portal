@@ -21,3 +21,5 @@ const f = fs
     commit['index'] = idx;
     return commit;
   });
+
+console.log(f);
