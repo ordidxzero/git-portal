@@ -14,9 +14,7 @@ program.parse(process.argv);
 const options = program.opts();
 const logs = readGitFile();
 if (options.latest) {
-  ChildProcess.exec('git checkout -', function (error, stdout, stderr) {
-    console.dir(stdout);
-  });
+  ChildProcess.exec('git checkout -');
 } else {
   if (options.order) {
     const order = +options.order;
