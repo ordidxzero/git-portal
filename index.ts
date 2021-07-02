@@ -18,7 +18,11 @@ if (options.health) {
   console.log(filePAth);
 }
 if (options.latest) {
-  ChildProcess.exec('git checkout -');
+  ChildProcess.exec('git checkout -', (error, stdout, stderr) => {
+    if (stdout) {
+      console.log('Checkout to Latest Commit');
+    }
+  });
 } else {
   if (options.order) {
     const order = +options.order;
@@ -28,7 +32,11 @@ if (options.latest) {
       if (order > logs.length - 1 || order < 0) {
         console.log('This index is not valid');
       } else {
-        ChildProcess.exec(`git checkout ${logs[order].id}`);
+        ChildProcess.exec(`git checkout ${logs[order].id}`, (error, stdout, stderr) => {
+          if (stdout) {
+            console.log(`Checkout to "${logs[order].message}" (Order: ${order})`);
+          }
+        });
       }
     }
   } else {
