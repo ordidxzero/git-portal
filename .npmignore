@@ -1,1 +1,6 @@
 node_modules/
+.eslint.js
+.gitignore
+.prettierrc
+*.ts
+tsconfig.json
