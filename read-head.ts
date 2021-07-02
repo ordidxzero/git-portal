@@ -1,9 +1,11 @@
 import fs from 'fs';
-import appRoot from 'app-root-path';
+import path from 'path';
+
+export const filePAth = path.join(path.dirname(fs.realpathSync(__filename)), '../.git');
 
 const readGitFile = () =>
   fs
-    .readFileSync(appRoot.resolve('.git/logs/HEAD'), 'utf-8')
+    .readFileSync(filePAth, 'utf-8')
     .split('\n')
     .map(commit => commit.replace(/^([\w\-]+)/, '').trim())
     .filter(Boolean)

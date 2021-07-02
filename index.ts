@@ -1,7 +1,6 @@
 import { Command } from 'commander';
-import appRoot from 'app-root-path';
 import ChildProcess from 'child_process';
-import readGitFile from './read-head';
+import readGitFile, { filePAth } from './read-head';
 
 const program = new Command('git-portal');
 
@@ -16,7 +15,7 @@ program.parse(process.argv);
 const options = program.opts();
 const logs = readGitFile();
 if (options.health) {
-  console.log(appRoot.resolve('.git'));
+  console.log(filePAth);
 }
 if (options.latest) {
   ChildProcess.exec('git checkout -');
