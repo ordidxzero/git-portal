@@ -1,7 +1,7 @@
 import fs from 'fs';
-import appRoot from 'app-root-path';
+import path from 'path';
 
-export const filePAth = appRoot.resolve('../.git/logs/HEAD');
+export const filePAth = path.join(process.cwd(), '../../../.git/logs/HEAD');
 
 const readGitFile = () =>
   fs
