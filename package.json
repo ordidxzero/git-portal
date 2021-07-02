@@ -9,13 +9,13 @@
   "preferGlobal": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx tsc && node dist/index.js"
+    "build": "npx tsc"
   },
   "keywords": [
     "cli",
     "git"
   ],
-  "author": "",
+  "author": "ordidxzero <ordidxzero@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/app-root-path": "^1.2.4",
