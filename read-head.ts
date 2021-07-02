@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export const filePAth = path.join(path.dirname(fs.realpathSync(__filename)), '../.git');
+export const filePAth = path.join(path.dirname(fs.realpathSync(__filename)), '../.git/logs/HEAD');
 
 const readGitFile = () =>
   fs
