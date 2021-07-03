@@ -5,6 +5,7 @@ import readGitFile, { filePAth } from './read-head';
 const program = new Command('git-portal');
 
 program
+  .option('-v, --version', 'Version of Git Portal')
   .option('-h, --health', "Check Git object's path")
   .option('-o, --order <number>', 'Type order of commit. first = 0')
   .option('-lc, --last', 'order of last commit. If you use the o option, this option is ignored.')
