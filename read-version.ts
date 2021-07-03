@@ -5,7 +5,6 @@ import path from 'path';
 const filePath = appRoot.resolve('./package.json');
 
 const readPackageJson = () => {
-  console.log(filePath);
   const json = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   return json['version'];
 };
