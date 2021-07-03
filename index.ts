@@ -4,6 +4,7 @@ import { Command } from 'commander';
 import ChildProcess from 'child_process';
 import readGitFile, { filePAth } from './read-head';
 import readPackageJson from './read-version';
+import generateGitJson from './read-git';
 
 const program = new Command('git-portal');
 
@@ -12,7 +13,8 @@ program
   .option('-h, --health', "Check Git object's path")
   .option('-o, --order <number>', 'Type order of commit. first = 0')
   .option('-lc, --last', 'order of last commit. If you use the o option, this option is ignored.')
-  .option('-la , --latest', 'Back to the latest commit.');
+  .option('-la , --latest', 'Back to the latest commit.')
+  .option('-r , --read', 'Read .git folder.');
 
 program.parse(process.argv);
 
@@ -22,6 +24,9 @@ if (options.version) {
 } else {
   try {
     const logs = readGitFile();
+    if (options.read) {
+      generateGitJson();
+    }
     if (options.health) {
       console.log(filePAth);
     }

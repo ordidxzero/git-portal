@@ -4,4 +4,4 @@ node_modules/
 .prettierrc
 *.ts
 tsconfig.json
-git.json
+generated-git.json

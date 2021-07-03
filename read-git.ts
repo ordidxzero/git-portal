@@ -13,8 +13,10 @@ const formatter = (path: string) => (prev: any, cur: string, idx: number, arr: s
   return prev;
 };
 
-const f = fs.readdirSync('.git', 'utf-8').reduce(formatter('.git'), {} as any);
+const generateGitJson = () => {
+  const f = fs.readdirSync('.git', 'utf-8').reduce(formatter('.git'), {} as any);
 
-fs.writeFileSync('git.json', JSON.stringify(f, null, 4));
+  fs.writeFileSync('generated-git.json', JSON.stringify(f, null, 4));
+};
 
-console.log(f);
+export default generateGitJson;
