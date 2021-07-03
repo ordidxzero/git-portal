@@ -1,6 +1,5 @@
 import fs from 'fs';
 import appRoot from 'app-root-path';
-import path from 'path';
 
 const filePath = appRoot.resolve('./package.json');
 
