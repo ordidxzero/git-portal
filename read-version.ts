@@ -1,7 +1,8 @@
 import fs from 'fs';
+import appRoot from 'app-root-path';
 import path from 'path';
 
-const filePath = path.join('./package.json');
+const filePath = appRoot.resolve('./package.json');
 
 const readPackageJson = () => {
   console.log(filePath);
